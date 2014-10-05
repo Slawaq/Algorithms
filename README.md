@@ -1,3 +1,2 @@
-Java high performance server - <b>Uprise</b>
-
+<b>Algorithms</b>
 
