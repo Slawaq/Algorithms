@@ -17,8 +17,12 @@ public class Route {
 	}
 
 	public void addLeg(Entry<Coordinates, Place> p) {
-		legs.add(Leg.create(last.getKey(), p.getKey()));
+		legs.add(getLeg(p));
 		last = p;
+	}
+	
+	public Leg getLeg(Entry<Coordinates, Place> p) {
+		return Leg.create(last.getKey(), p.getKey());
 	}
 	
 	public double totalDistance() {

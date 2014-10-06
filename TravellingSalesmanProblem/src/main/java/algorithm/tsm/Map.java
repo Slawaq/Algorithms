@@ -1,8 +1,10 @@
 package algorithm.tsm;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
-import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 public class Map {
 
@@ -18,8 +20,11 @@ public class Map {
 			throw new ApplicationException(String.format("Cannot put place(%s) on map, coordinates(%s) already occupied", a.getId(), coordinates.hashCode()));
 	}
 	
-	public Stream<Entry<Coordinates, Place>> getAllPlacesWithCoordinates() {
-		return palces.entrySet().stream();
+	public List<Entry<Coordinates, Place>> getAllPlacesWithCoordinates() {
+		return palces
+				.entrySet()
+				.stream()
+				.collect(Collectors.toList());
 	}
 
 	public Place getPlace(Coordinates coordinates) {
